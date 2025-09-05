@@ -1,4 +1,3 @@
-// const API_URL = "https://portfolio-backend-5uce.onrender.com"; 
 const API_URL = import.meta.env.VITE_API_URL;
 
 

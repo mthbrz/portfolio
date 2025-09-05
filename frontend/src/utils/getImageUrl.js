@@ -1,4 +1,4 @@
-import { BASE_URL } from "../config";
+import { BASE_URL } from "../services/config.js";
 
 export function getImageUrl(projet) {
   if (!projet.image || projet.image.length === 0) return null;
