@@ -7,7 +7,7 @@ import { FaLinkedin, FaGithub, FaPhone } from "react-icons/fa";
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
+    setResult("Envoi en cours....");
     const formData = new FormData(event.target);
 
     formData.append("access_key", "7a0c7028-3e9e-4885-8122-b11131be56fc");
@@ -50,6 +50,7 @@ return (
           <label htmlFor="name" className="mb-2 font-medium">Nom :</label>
           <input 
             type="text" 
+            name="name"
             id="name" 
             required
             className="p-3 rounded-lg border border-gray-300 dark:border-gray-700 
@@ -64,6 +65,7 @@ return (
           <label htmlFor="email" className="mb-2 font-medium">Email :</label>
           <input 
             type="email" 
+            name="email"
             id="email" 
             required
             className="p-3 rounded-lg border border-gray-300 dark:border-gray-700 
@@ -77,7 +79,8 @@ return (
         <div className="flex flex-col text-slate-950 dark:text-purple-50 text-3xl">
           <label htmlFor="message" className="mb-2 font-medium">Message :</label>
           <textarea 
-            id="message" 
+            id="message"
+            name="message"
             required 
             rows={6}
             className="p-3 rounded-lg border border-gray-300 dark:border-gray-700 
@@ -90,6 +93,7 @@ return (
 
         <button 
           type="submit"
+          name="submit"
           className="mt-2 px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
                      text-purple-50 dark:text-slate-950 text-3xl rounded-xl shadow-lg 
                      bg-gradient-to-r from-purple-300 to-purple-800

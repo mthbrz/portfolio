@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchProjets } from "../services/api";
+import { fetchProjets } from "../services/api.js";
 import { getImageUrl } from "../utils/getImageUrl.js"; 
 import { getImageHoverUrl } from "../utils/getImageHoverUrl.js";
 import { getFirstUrl } from "../utils/getUrl.js";
