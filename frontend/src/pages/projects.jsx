@@ -91,7 +91,6 @@ function Projets() {
                 ? projet.description[0]?.children?.[0]?.text 
                 : projet.description}
             </p>
-{console.log("PROJET IMAGE :", projet.image[0].url)}
             <div className="relative group w-full h-[250px] rounded-xl overflow-hidden mb-4">
                 <img
                   src={`${import.meta.env.VITE_BACKEND_URL}${projet.image[0].url}`}
