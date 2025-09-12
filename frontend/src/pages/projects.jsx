@@ -91,17 +91,17 @@ function Projets() {
                 ? projet.description[0]?.children?.[0]?.text 
                 : projet.description}
             </p>
-
+{console.log("PROJET IMAGE :", projet.image[0].url)}
             <div className="relative group w-full h-[250px] rounded-xl overflow-hidden mb-4">
                 <img
-                  src={projet.image}
+                  src={`${import.meta.env.VITE_BACKEND_URL}${projet.image[0].url}`}
                   alt={projet.titre}
                   className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
                   loading="lazy"
                 />
 
                 <img
-                  src={projet.ImageHover}
+                  src={`${import.meta.env.VITE_BACKEND_URL}${projet.ImageHover.url}`}
                   alt={projet.titre}
                   className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   loading="lazy"
