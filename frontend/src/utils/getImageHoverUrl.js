@@ -9,3 +9,6 @@ import { BASE_URL } from "../services/config.js";
     imageHoverData.formats?.medium?.url || imageHoverData.url
   }`;
 }
+
+
+

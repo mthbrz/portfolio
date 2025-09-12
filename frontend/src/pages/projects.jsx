@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { fetchProjets } from "../services/api.js";
-import { getImageUrl } from "../utils/getImageUrl.js"; 
-import { getImageHoverUrl } from "../utils/getImageHoverUrl.js";
 import { getFirstUrl } from "../utils/getUrl.js";
 import { FaRegPlayCircle, FaLink } from "react-icons/fa";
 
@@ -31,6 +29,16 @@ function Projets() {
     }
     getData();
   }, []);
+
+  useEffect(() => {
+  async function getData() {
+    const data = await fetchProjets();
+    console.log("DATA PROJET :", data[0]);
+    setProjets(data);
+  }
+  getData();
+}, []);
+
 
   return (
     <div className="py-16 px-8
@@ -85,25 +93,19 @@ function Projets() {
             </p>
 
             <div className="relative group w-full h-[250px] rounded-xl overflow-hidden mb-4">
-              {getImageUrl(projet) ? (
                 <img
-                  src={getImageUrl(projet)}
+                  src={projet.image}
                   alt={projet.titre}
                   className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
                   loading="lazy"
                 />
-              ) : (
-                <p className="text-sm text-gray-400">Pas d’image</p>
-              )}
 
-              {getImageHoverUrl(projet) && (
                 <img
-                  src={getImageHoverUrl(projet)}
+                  src={projet.ImageHover}
                   alt={projet.titre}
                   className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   loading="lazy"
                 />
-              )}
             </div>
 
             {projet.Techno && (

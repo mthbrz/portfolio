@@ -1,16 +1,16 @@
-const API_URL = import.meta.env.VITE_API_URL;
-
+import { BASE_URL } from "./config.js";
 
 export async function fetchProjets() {
   try {
-    const response = await fetch(`${API_URL}/api/projets?populate=*`);
-    if (!response.ok) {
-      throw new Error("Erreur lors de la récupération des projets");
-    }
-    const result = await response.json();
-    return result.data;
+    const url = (BASE_URL);
+
+    const response = await fetch(url);
+    const raw = await response.json();
+
+    return raw.data;
+
   } catch (error) {
-    console.error("Erreur API fetchProjets:", error);
+    console.error("Erreur fetchProjets:", error);
     return [];
   }
 }

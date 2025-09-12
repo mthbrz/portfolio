@@ -1,2 +1,1 @@
-export const BASE_URL = "https://portfolio-backend-5uce.onrender.com";
-
+export const BASE_URL = import.meta.env.VITE_API_URL;
