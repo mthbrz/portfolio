@@ -93,14 +93,14 @@ function Projets() {
             </p>
             <div className="relative group w-full h-[250px] rounded-xl overflow-hidden mb-4">
                 <img
-                  src={`${import.meta.env.VITE_BACKEND_URL}${projet.image[0].url}`}
+                  src={projet.image[0].url}
                   alt={projet.titre}
                   className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
                   loading="lazy"
                 />
 
                 <img
-                  src={`${import.meta.env.VITE_BACKEND_URL}${projet.ImageHover.url}`}
+                  src={projet.ImageHover.url}
                   alt={projet.titre}
                   className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   loading="lazy"
